@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-searchbar animated placeholder="Search Plant Catalog..."></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content pulling-icon="refresh" refreshingSpinner="crescent"></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let plant of this.dataHandler.plants" class="card-collapsed">
+    <div class="card-title" (click)="toggleExpanded(plant)">{{plant.titles[0]}}</div>
+    <ion-button class="arrow" *ngIf="!plant.expanded" fill="clear" (click)="toggleExpanded(plant)">
+      <ion-icon name="arrow-dropdown" color="dark"></ion-icon>
+    </ion-button>
+    <ion-button class="arrow" *ngIf="plant.expanded" fill="clear" (click)="toggleExpanded(plant)">
+      <ion-icon name="arrow-dropup" color="dark"></ion-icon>
+    </ion-button>
+    <div class="card-subtitle" (click)="toggleExpanded(plant)">{{plant.subtitle}}</div>
+    <ion-img *ngIf="plant.expanded" class="card-img" src="http://botanicalapp.com/wp-content/botanical-data/img/{{plant.id}}/0.png" (click)="presentPlantDetailModal(plant)"></ion-img>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>Don't see the plant you want, or want additional info on an existing one? We're still a new app!
+      <a href="mailto:requests@botanicalapp.com">Send
+        us an email</a> and we'll get to your request as soon as possible.</ion-card-content>
+  </ion-card>
+</ion-content>

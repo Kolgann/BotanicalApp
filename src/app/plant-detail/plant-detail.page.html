@@ -1,0 +1,24 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="addPlant();" fill="clear" color="primary">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        &nbsp; Add Plant
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal();" fill="clear" color="dark">
+        <ion-icon name="close" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-chip color="primary" *ngIf="showChip">
+      <ion-avatar>{{plantQuant}}</ion-avatar>
+    </ion-chip>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="top: 0%;">
+  <h6 style="text-align: center; font-style: italic;">{{this.dataHandler.plant.subtitle}}</h6>
+  <ion-img src="http://botanicalapp.com/wp-content/botanical-data/img/{{this.dataHandler.plant.id}}/0.png"></ion-img>
+  <p style="padding: 3vw;">{{this.dataHandler.plant.paragraph}}</p>
+</ion-content>

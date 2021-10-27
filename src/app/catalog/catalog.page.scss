@@ -1,0 +1,36 @@
+.card-background-page {
+    .card-expanded {
+        position: relative;
+        text-align: center;
+    }
+
+    .card-collapsed {
+        position: relative;
+        text-align: center;
+    }
+
+    .arrow {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    .card-title {
+        padding: 8px;
+        text-align: left;
+        font-size: 2.0em;
+        width: 80%;
+        font-weight: bold;
+        color: #000;
+        text-transform: uppercase;
+    }
+
+    .card-subtitle {
+        padding: 8px;
+        text-align: right;
+        font-size: 1.0em;
+        width: 100%;
+        font-style: italic;
+        color: #000;
+    }
+}

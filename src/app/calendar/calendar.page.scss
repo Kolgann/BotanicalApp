@@ -1,0 +1,87 @@
+ion-content {
+    [col-1] {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 8.33333%;
+      -ms-flex: 0 0 8.33333%;
+      flex: 0 0 14.285714285714286%;
+      width: 14.285714285714286%;
+      max-width: 14.285714285714286%;
+    }
+    .col {
+      text-align: center;
+      padding: 5px;
+    }
+    .month-year {
+      text-align: center;
+    }
+    .last-month,
+    .next-month,
+    .current-month {
+      width: 10vw;
+      height: 10vw;
+      top: 5vw;
+    }
+    .last-month,
+    .next-month {
+      color: #999999;
+    }
+    .current-date,
+    .event-date,
+    .other-date {
+      //width: 7vw;
+      //height: 7vw;
+      top: 5vw;
+    }
+    .current-date {
+      font-weight: bold;
+      color: white;
+      z-index: 2;
+      //background-image: radial-gradient(circle at center, var(--ion-color-primary) 50%, transparent 50%), radial-gradient(circle at center, var(--ion-color-primary) 50%, transparent 50%);
+      //border-radius: 100%;
+    }
+    /*.event-date {
+      border-radius: 100%;
+      border-style: solid;
+      border-width: 3px;
+      border-color: var(--ion-color-primary);
+    }*/
+    .current-date::after {
+      content: "";
+      position: absolute;
+      //background-image: radial-gradient(circle at center, var(--ion-color-primary) 10vw, transparent 10vw), radial-gradient(circle at center, var(--ion-color-primary) 10vw, transparent 10vw);
+      background-color: var(--ion-color-primary);
+      border-radius: 100%;
+      width: 10vw;
+      height: 10vw;
+      left: 0vw;
+      top: 0vw;
+      z-index: 1;
+    }
+  
+    .calendar-header {
+      border-radius: 50px;
+    }
+    .calendar-body {
+      .grid {
+        padding: 0;
+      }
+      .col:last-child {
+        border-right: none;
+      }
+      .calendar-weekday,
+      .calendar-date {
+        text-align: center;
+        margin: 0;
+      }
+      .calendar-weekday {
+        font-weight: bold;
+        color: #ffffff;
+        background-color: var(--ion-color-primary);
+        border-radius: 50px;
+      }
+    }
+    h1 {
+      text-align: center;
+    }
+  }
+  

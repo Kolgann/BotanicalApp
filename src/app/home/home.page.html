@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="settings">
+        <ion-icon name="cog" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content pulling-icon="refresh" refreshingSpinner="crescent"></ion-refresher-content>
+  </ion-refresher>
+  <ion-button (click)="clearStorage();">delete everything hooray</ion-button>
+  <ion-button (click)="writeToList()">list all the bingos in the bongo</ion-button>
+  <h2 style="text-align: center;">Your Plants</h2>
+  <ion-list id="userPlantList">
+    <ion-item class="userPlant" *ngFor="let userPlant of dataHandler.userPlants">
+      <ion-label>{{userPlant.titles[0]}}</ion-label>
+      <ion-note>{{userPlant.subtitle}}</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
